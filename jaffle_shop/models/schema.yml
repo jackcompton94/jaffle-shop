@@ -39,3 +39,17 @@ models:
           - relationships:
               to: ref('stg_customers')
               field: customer_id
+
+  - name: stg_payments
+    description: This model cleans up Stripe payment data
+    columns:
+      - name: payment_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: payment_method
+        description: The method used for the payment
+        tests:
+          - accepted_values:
+              values: ['credit_card', 'bank_transfer', 'coupon', 'gift_card']
