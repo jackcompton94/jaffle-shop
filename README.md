@@ -60,6 +60,7 @@ dbt test
 dbt docs generate
 dbt docs serve
 ```
+`dbt build` - runs and tests all SQL and dbt code in DAG (Directed Acyclic Graph) order
 
 ## Study Tips
 
